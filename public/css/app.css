@@ -1,0 +1,81 @@
+body{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ballot-image {
+    width: 70%;
+    height: 70%;
+    margin-top: 10%;
+}
+
+#form {
+    text-align: center;
+    padding: 10%;
+    border-radius: 15px;
+    border: 5px solid black;
+}
+
+#select-button{
+    color: white;
+    background: green;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 120%;
+}
+.ballot-display{
+    /* background-color: brown; */
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+#ballot-casing {
+    border-radius: 10px;
+    background: rgb(222, 220, 225);
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping to move to the next line */
+    justify-content: space-around; /* Adjust as needed for spacing */
+    padding: 15px;
+}
+
+.checkbox {
+    width: 25%;
+    height: 25%;
+    margin-top: 30%;
+}
+
+.input-div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-reg {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+label {
+    font-size: large;
+    font-weight: bold;
+}
+
+#success-head {
+    color: green;
+}
+
+.success-text {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#failure-head {
+    color: red;
+}
