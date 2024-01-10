@@ -36,8 +36,10 @@ class BallotController extends Controller
         $name = $request->name;
         $tel = $request->tel;
 
-        $user = User::where('name', $name)->orWhere('phone_number', $tel)->get();
-        if($user->isEmpty()) {
+        $idExists = User::where('name', $name)->orWhere('phone_number', $tel)->find('id');
+        // echo $idExists;
+        // dd($idExists);
+        if($idExists == null) {
             $user = new User;
             $user->name = $name;
             $user->phone_number = $tel;
@@ -47,7 +49,15 @@ class BallotController extends Controller
             return redirect()->route('ballot');
         }
         else {
-            return view('unavailable');
+            $user = UserBallot::where('user_id', $idExists->id)->get();
+            // dd($user);
+            if($user->isEmpty()) {
+                session(['uid' => $idExists->id]);
+                return redirect()->route('ballot');
+            }
+            else {
+                return view('unavailable');
+            }
         }
     }
 
